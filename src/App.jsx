@@ -39,10 +39,19 @@ fetchTours()
   </main>
  }
 //  TODO: 
+if (tours.length===0) {
+  return <main>
+<div className="title">
+  <h2>Nothing Left</h2>
+  <button className="btn" style={{marginTop:'2rem'}} onClick={()=>fetchTours}>refresh</button>
+</div>
 
- return <main>
-  <Tours tours={tours} removeTour={removeTour}/>
- </main>
-  
+  </main>
+}
+return (
+  <main>
+    <Tours tours={tours} removeTour={removeTour}></Tours>
+  </main>
+)
 };
 export default App;
